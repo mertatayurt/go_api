@@ -88,7 +88,7 @@ func (server *Server) UpdateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tokenID, err := auth.ExctractTokenID(r)
+	tokenID, err := auth.ExtractTokenID(r)
 
 	if err != nil || (tokenID != uint32(uid)) {
 		responses.ERROR(w, http.StatusUnauthorized, err)
@@ -104,7 +104,7 @@ func (server *Server) UpdateUser(w http.ResponseWriter, r *http.Request) {
 
 	updatedUser, err := user.UpdateAUser(server.DB, uint32(uid))
 	if err != nil {
-		formattedError = formaterror.FormatError(err.Error())
+		formattedError := formaterror.FormatError(err.Error())
 		responses.ERROR(w, http.StatusInternalServerError, formattedError)
 		return
 	}
@@ -120,7 +120,7 @@ func (server *Server) DeleteUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	user := models.User{}
-	tokenID, err = auth.ExtractTokenID(r)
+	tokenID, err := auth.ExtractTokenID(r)
 	if err != nil || (tokenID <= 0 && tokenID != uint32(uid)) {
 		responses.ERROR(w, http.StatusUnauthorized, errors.New("Unauthorized"))
 		return
