@@ -2,7 +2,7 @@
 
 # Intro
   This is a simple golang web api to do some basic operations such as authentication, get post put delete. 
-  I believe it's a good point to start go language. As a Php developer this project showed me how powerful golang technology.
+  I believe it's a good point to start go language. As a Php developer this project showed me how powerful the golang     technology is.
   Especially when you compare Laravel and golang there are some awesome results. Such as some endpoints returns around 5ms 
   which is something impossible to do with Laravel. 
 
