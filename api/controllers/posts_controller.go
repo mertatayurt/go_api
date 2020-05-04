@@ -118,7 +118,7 @@ func (server *Server) UpdateAPost(w http.ResponseWriter, r *http.Request) {
 	}
 
 	postUpdate := models.Post{}
-	err = json.Unmarshal(body, postUpdate)
+	err = json.Unmarshal(body, &postUpdate)
 	if err != nil {
 		responses.ERROR(w, http.StatusUnprocessableEntity, err)
 		return
