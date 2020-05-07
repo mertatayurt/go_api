@@ -1,0 +1,518 @@
+{
+	"info": {
+		"_postman_id": "7c4bf250-f60b-4e22-8ae7-1683344a18a3",
+		"name": "Go Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{golangPath}}users",
+							"host": [
+								"{{golangPath}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{golangPath}}users/1",
+							"host": [
+								"{{golangPath}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+								"exec": [
+									"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{goApiToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"author_id\":1,\n\t\"title\":\"Title1\",\n\t\"content\":\"Content1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{golangPath}}users/1",
+							"host": [
+								"{{golangPath}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+								"exec": [
+									"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{goApiToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nickname\":\"Merti Atayurti\",\n\t\"email\":\"atayurtmert@gmail.com\",\n\t\"password\":\"SecretPassword1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{golangPath}}users/1",
+							"host": [
+								"{{golangPath}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+								"exec": [
+									"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{goApiToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nickname\":\"Merti\",\n\t\"email\":\"atayurimerti@gmail.com\",\n\t\"password\":\"SecretPassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{golangPath}}users",
+							"host": [
+								"{{golangPath}}users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create Post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+								"exec": [
+									"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{goApiToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"author_id\":1,\n\t\"title\":\"Title5\",\n\t\"content\":\"Content5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{golangPath}}posts",
+							"host": [
+								"{{golangPath}}posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+								"exec": [
+									"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{goApiToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{golangPath}}posts/1",
+							"host": [
+								"{{golangPath}}posts"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+								"exec": [
+									"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{goApiToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"author_id\":1,\n\t\"title\":\"Title6\",\n\t\"content\":\"Content6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{golangPath}}posts/1",
+							"host": [
+								"{{golangPath}}posts"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+								"exec": [
+									"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{goApiToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{golangPath}}posts/3",
+							"host": [
+								"{{golangPath}}posts"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{golangPath}}posts",
+							"host": [
+								"{{golangPath}}posts"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+						"exec": [
+							"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"atayurtmert@gmail.com\",\n\t\"password\":\"SecretPassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{golangPath}}login",
+					"host": [
+						"{{golangPath}}login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+						"exec": [
+							"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"atayurtmert@gmail.com\",\n\t\"password\":\"SecretPassword1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{golangPath}}home",
+					"host": [
+						"{{golangPath}}home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deneme",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65043cde-4a37-4fc5-9c58-7d41edf3e0d4",
+						"exec": [
+							"pm.environment.set(\"goApiToken\",pm.response.json().token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{goApiToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"atayurtmert@gmail.com\",\n\t\"password\":\"SecretPassword1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{golangPath}}deneme",
+					"host": [
+						"{{golangPath}}deneme"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
